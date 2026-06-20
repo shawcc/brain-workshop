@@ -1,5 +1,5 @@
 import { Link, useNavigate, useParams } from "react-router-dom"
-import { ArrowLeft, Copy, RotateCcw, Trophy } from "lucide-react"
+import { ArrowLeft, Brain, FlaskConical, RotateCcw, Trophy } from "lucide-react"
 import AppShell from "@/components/AppShell"
 import GameBoard from "@/components/GameBoard"
 import { difficultyLabels } from "@/data/games"
@@ -33,9 +33,18 @@ export default function Play() {
 
         <aside className="space-y-4">
           <div className="rounded-[2rem] border border-cream/10 bg-cream/8 p-5">
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan">Now Playing</p>
+            <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan">Algorithm Challenge</p>
             <h1 className="mt-2 font-display text-4xl font-black leading-none">{game.title}</h1>
             <p className="mt-4 text-sm leading-6 text-cream/62">{game.config.goal}</p>
+          </div>
+
+          <div className="rounded-[2rem] border border-cyan/20 bg-cyan/10 p-5">
+            <h2 className="flex items-center gap-2 font-bold">
+              <Brain className="h-4 w-4 text-cyan" />
+              这节课学什么
+            </h2>
+            <p className="mt-3 text-sm font-bold text-cyan">{game.algorithm}</p>
+            <p className="mt-2 text-sm leading-6 text-cream/64">{game.concept}</p>
           </div>
 
           <div className="rounded-[2rem] border border-cream/10 bg-cream/8 p-5">
@@ -46,7 +55,7 @@ export default function Play() {
             <ul className="mt-4 space-y-3 text-sm text-cream/64">
               <li>在 {game.config.movesLimit} 步内完成目标。</li>
               <li>点击与空位相邻的棋子移动。</li>
-              <li>如果卡住，可以复刻成草稿调整难度。</li>
+              <li>如果卡住，先想想算法会按什么顺序尝试。</li>
             </ul>
           </div>
 
@@ -56,8 +65,8 @@ export default function Play() {
               重新开始
             </button>
             <button className="toy-button justify-center bg-cream text-ink px-5 py-4" onClick={handleRemix}>
-              <Copy className="h-5 w-5" />
-              复刻这个玩法
+              <FlaskConical className="h-5 w-5" />
+              去实验室改一改
             </button>
           </div>
         </aside>

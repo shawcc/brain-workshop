@@ -1,6 +1,6 @@
 import { useMemo } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { Rocket, Save } from "lucide-react"
+import { GraduationCap, Save } from "lucide-react"
 import AppShell from "@/components/AppShell"
 import GameBoard from "@/components/GameBoard"
 import GuidePanel from "@/components/GuidePanel"
@@ -27,17 +27,17 @@ export default function Creator() {
     <AppShell>
       <section className="mx-auto grid max-w-7xl gap-6 px-5 py-10 xl:grid-cols-[340px_1fr_360px]">
         <aside className="rounded-[2rem] border border-cream/10 bg-cream/8 p-5">
-          <p className="text-xs font-black uppercase tracking-[0.24em] text-orange">Creator Desk</p>
-          <h1 className="mt-2 font-display text-4xl font-black">创造工作台</h1>
+          <p className="text-xs font-black uppercase tracking-[0.24em] text-orange">Algorithm Lab</p>
+          <h1 className="mt-2 font-display text-4xl font-black">算法实验室</h1>
           <div className="mt-6 space-y-4">
-            <Field label="游戏名称">
+            <Field label="实验名称">
               <input
                 value={draft.title}
                 onChange={(event) => updateDraft(draft.id, { title: event.target.value })}
                 className="input"
               />
             </Field>
-            <Field label="作品介绍">
+            <Field label="实验说明">
               <textarea
                 value={draft.description}
                 onChange={(event) => updateDraft(draft.id, { description: event.target.value })}
@@ -66,6 +66,20 @@ export default function Creator() {
                 ))}
               </select>
             </Field>
+            <Field label="算法主题">
+              <input
+                value={draft.algorithm}
+                onChange={(event) => updateDraft(draft.id, { algorithm: event.target.value })}
+                className="input"
+              />
+            </Field>
+            <Field label="孩子要理解的一句话">
+              <textarea
+                value={draft.concept}
+                onChange={(event) => updateDraft(draft.id, { concept: event.target.value })}
+                className="input min-h-24 resize-none"
+              />
+            </Field>
             <Field label="胜利目标">
               <textarea
                 value={draft.config.goal}
@@ -87,7 +101,7 @@ export default function Creator() {
         <section className="rounded-[2.5rem] border border-cream/12 bg-cream/10 p-5 md:p-8">
           <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
             <div>
-              <p className="text-sm font-bold text-cyan">实时预览 · {gameTypeLabels[draft.gameType]}</p>
+              <p className="text-sm font-bold text-cyan">算法实验预览 · {gameTypeLabels[draft.gameType]}</p>
               <h2 className="mt-1 font-display text-4xl font-black">{draft.title}</h2>
             </div>
             <span className="rounded-full border border-cream/10 bg-ink/50 px-4 py-2 text-sm text-cream/62">
@@ -98,11 +112,11 @@ export default function Creator() {
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             <button className="toy-button justify-center px-5 py-4" onClick={() => updateDraft(draft.id, {})}>
               <Save className="h-5 w-5" />
-              保存草稿
+              保存实验
             </button>
             <button className="toy-button justify-center bg-cream text-ink px-5 py-4" onClick={publish} disabled={!report.publishReady}>
-              <Rocket className="h-5 w-5" />
-              {report.publishReady ? "发布游戏" : "修复后发布"}
+              <GraduationCap className="h-5 w-5" />
+              {report.publishReady ? "发布算法课" : "补全后发布"}
             </button>
           </div>
         </section>

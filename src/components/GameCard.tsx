@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
-import { Copy, Heart, Play, UsersRound } from "lucide-react"
-import { difficultyLabels, gameTypeLabels } from "@/data/games"
+import { FlaskConical, Heart, Play, UsersRound } from "lucide-react"
+import { difficultyLabels } from "@/data/games"
 import type { Game } from "@/types"
 import GameBoard from "@/components/GameBoard"
 
@@ -23,9 +23,14 @@ export default function GameCard({ game, liked, onFavorite, onRemix }: GameCardP
 
       <div className="mt-5 space-y-4">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan">{gameTypeLabels[game.gameType]}</p>
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan">{game.algorithm}</p>
           <h3 className="mt-2 font-display text-2xl font-black leading-tight text-cream">{game.title}</h3>
           <p className="mt-2 line-clamp-2 text-sm text-cream/62">{game.description}</p>
+        </div>
+
+        <div className="rounded-2xl border border-cyan/15 bg-cyan/8 p-3">
+          <p className="text-xs font-black text-cyan">学到的算法思想</p>
+          <p className="mt-1 line-clamp-2 text-sm text-cream/70">{game.concept}</p>
         </div>
 
         <div className="flex flex-wrap gap-2">
@@ -41,16 +46,16 @@ export default function GameCard({ game, liked, onFavorite, onRemix }: GameCardP
             <UsersRound className="h-3.5 w-3.5" />
             {game.playCount.toLocaleString()} 次游玩
           </span>
-          <span>{game.remixCount} 次复刻</span>
+          <span>{game.ageRange}</span>
         </div>
 
         <div className="grid grid-cols-[1fr_auto_auto] gap-2">
           <Link to={`/play/${game.id}`} className="toy-button justify-center px-4 py-3 text-sm">
             <Play className="h-4 w-4" />
-            开玩
+            开始挑战
           </Link>
-          <button className="icon-button" onClick={() => onRemix(game.id)} aria-label="复刻游戏">
-            <Copy className="h-4 w-4" />
+          <button className="icon-button" onClick={() => onRemix(game.id)} aria-label="进入算法实验">
+            <FlaskConical className="h-4 w-4" />
           </button>
           <button className="icon-button" onClick={() => onFavorite(game.id)} aria-label="收藏游戏">
             <Heart className={liked ? "h-4 w-4 fill-red text-red" : "h-4 w-4"} />

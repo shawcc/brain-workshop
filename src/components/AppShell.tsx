@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom"
-import { Gamepad2, Hammer, LibraryBig, Sparkles, UserRound } from "lucide-react"
+import { Gamepad2, FlaskConical, GraduationCap, LibraryBig, Sparkles } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 type AppShellProps = {
@@ -7,9 +7,9 @@ type AppShellProps = {
 }
 
 const navItems = [
-  { href: "/", label: "发现", icon: LibraryBig },
-  { href: "/create", label: "创造", icon: Hammer },
-  { href: "/me", label: "我的", icon: UserRound },
+  { href: "/", label: "算法课", icon: LibraryBig },
+  { href: "/create", label: "实验室", icon: FlaskConical },
+  { href: "/me", label: "学习档案", icon: GraduationCap },
 ]
 
 export default function AppShell({ children }: AppShellProps) {
@@ -26,7 +26,7 @@ export default function AppShell({ children }: AppShellProps) {
             </span>
             <span>
               <span className="block font-display text-xl font-black tracking-tight">脑力小工坊</span>
-              <span className="block text-xs text-cream/58">小学生思维训练乐园</span>
+              <span className="block text-xs text-cream/58">小学生算法启蒙乐园</span>
             </span>
           </NavLink>
 
@@ -51,7 +51,7 @@ export default function AppShell({ children }: AppShellProps) {
 
           <NavLink to="/auth" className="toy-button hidden items-center gap-2 px-4 py-2 text-sm md:flex">
             <Sparkles className="h-4 w-4" />
-            连接 Supabase
+            家长/老师入口
           </NavLink>
         </nav>
       </header>

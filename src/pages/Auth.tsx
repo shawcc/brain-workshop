@@ -8,18 +8,18 @@ export default function Auth() {
         <div className="grid w-full overflow-hidden rounded-[2.5rem] border border-cream/12 bg-cream/10 shadow-2xl shadow-black/25 lg:grid-cols-[1fr_0.9fr]">
           <div className="p-8 md:p-12">
             <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan">Supabase Ready</p>
-            <h1 className="mt-3 font-display text-6xl font-black leading-none">连接账号系统</h1>
+            <h1 className="mt-3 font-display text-6xl font-black leading-none">家长与老师入口</h1>
             <p className="mt-5 max-w-xl text-cream/66">
-              当前版本先演示前端闭环。接入 Supabase 后，这里会承载邮箱登录、GitHub 登录、用户资料创建和草稿云同步。
+              当前版本先演示前端学习闭环。接入 Supabase 后，这里会承载班级、学习进度、收藏课程和算法实验云同步。
             </p>
             <div className="mt-8 grid gap-3">
               <button className="toy-button justify-center px-5 py-4">
                 <Github className="h-5 w-5" />
-                使用 GitHub 登录
+                使用 GitHub 管理课程
               </button>
               <button className="toy-button justify-center bg-cream text-ink px-5 py-4">
                 <Mail className="h-5 w-5" />
-                发送邮箱魔法链接
+                发送家长邮箱链接
               </button>
             </div>
           </div>

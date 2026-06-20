@@ -16,8 +16,8 @@ type GameStore = {
 export const useGameStore = create<GameStore>((set, get) => ({
   games: demoGames,
   drafts: [starterDraft],
-  favorites: ["clockwork-tiles"],
-  currentUser: "当前创作者",
+  favorites: ["maze-bfs"],
+  currentUser: "当前学习者",
   toggleFavorite: (gameId) => {
     set((state) => ({
       favorites: state.favorites.includes(gameId)
@@ -31,12 +31,17 @@ export const useGameStore = create<GameStore>((set, get) => ({
 
     const draft: DraftGame = {
       id: `remix-${source.id}-${Date.now()}`,
-      title: `${source.title} 的复刻版`,
-      description: `基于「${source.title}」改造的新版本。`,
+      title: `${source.title} 的实验版`,
+      description: `基于「${source.title}」改造的新算法实验。`,
       author: get().currentUser,
       gameType: source.gameType,
+      algorithm: source.algorithm,
+      concept: source.concept,
+      ageRange: source.ageRange,
+      lesson: source.lesson,
+      skills: [...source.skills],
       difficulty: source.difficulty,
-      tags: [...source.tags, "复刻"],
+      tags: [...source.tags, "实验"],
       config: { ...source.config, tiles: [...source.config.tiles], path: source.config.path ? [...source.config.path] : undefined },
       sourceGameId: source.id,
       updatedAt: "刚刚",

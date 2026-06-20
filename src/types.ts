@@ -17,6 +17,11 @@ export type Game = {
   description: string
   author: string
   gameType: GameType
+  algorithm: string
+  concept: string
+  ageRange: string
+  lesson: string
+  skills: string[]
   difficulty: Difficulty
   tags: string[]
   config: GameConfig
@@ -33,6 +38,11 @@ export type DraftGame = {
   description: string
   author: string
   gameType: GameType
+  algorithm: string
+  concept: string
+  ageRange: string
+  lesson: string
+  skills: string[]
   difficulty: Difficulty
   tags: string[]
   config: GameConfig
