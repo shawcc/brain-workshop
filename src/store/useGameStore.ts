@@ -32,7 +32,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
     const draft: DraftGame = {
       id: `remix-${source.id}-${Date.now()}`,
       title: `${source.title} 的实验版`,
-      description: `基于「${source.title}」改造的新算法实验。`,
+      description: `基于「${source.title}」改造的新关卡。`,
       author: get().currentUser,
       gameType: source.gameType,
       algorithm: source.algorithm,

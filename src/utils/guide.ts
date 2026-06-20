@@ -11,9 +11,9 @@ export function createGuideReport(draft: DraftGame): GuideReport {
   if (!hasAlgorithm) {
     issues.push({
       level: "error" as const,
-      title: "算法主题还不够清楚",
-      description: "孩子需要知道这节游戏课到底在学哪种思考方法。",
-      suggestion: "写清楚算法名称和一句孩子能理解的解释，例如“BFS 就是一圈一圈找最近的路”。",
+      title: "最佳解法还不够清楚",
+      description: "孩子玩完后需要知道这关有没有更聪明的解法。",
+      suggestion: "写清楚方法名称和一句孩子能理解的解释，例如“一圈一圈找最近的路”。",
     })
   }
 
@@ -31,7 +31,7 @@ export function createGuideReport(draft: DraftGame): GuideReport {
       level: "warning" as const,
       title: "挑战步数可能偏紧",
       description: "当前限制容易让孩子只关注失败，而不是观察算法思路。",
-      suggestion: "启蒙课程先放宽限制，让孩子有余地尝试和复盘。",
+      suggestion: "先放宽限制，让孩子有余地尝试；玩完后再看最佳解法。",
     })
   }
 
@@ -47,9 +47,9 @@ export function createGuideReport(draft: DraftGame): GuideReport {
   if (!hasDescription) {
     issues.push({
       level: "warning" as const,
-      title: "课程介绍略短",
-      description: "好的介绍能帮助家长和孩子理解为什么要玩这关。",
-      suggestion: "补充一句游戏玩法亮点和一句算法学习目标。",
+      title: "关卡介绍略短",
+      description: "好的介绍能让孩子知道这关哪里好玩。",
+      suggestion: "补充一句玩法亮点和一句玩完能解锁的聪明办法。",
     })
   }
 
@@ -61,7 +61,7 @@ export function createGuideReport(draft: DraftGame): GuideReport {
 
   return {
     score: Math.max(score, 36),
-    summary: issues.length === 0 ? "算法主题、挑战目标和学习说明都很清楚，适合作为一节启蒙课。" : "算法实验已经成型，还可以继续优化孩子能学到什么、怎么验证成功、难度是否友好。",
+    summary: issues.length === 0 ? "玩法目标、挑战规则和最佳解法都很清楚，适合先玩再讲。" : "关卡已经成型，还可以继续优化怎么玩、怎么赢、玩完后怎么讲最佳解法。",
     publishReady: issues.every((issue) => issue.level !== "error") && score >= 72,
     issues,
   }

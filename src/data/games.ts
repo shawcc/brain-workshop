@@ -16,7 +16,7 @@ export const demoGames: Game[] = [
   {
     id: "maze-bfs",
     title: "迷宫最短路",
-    description: "从入口走到出口，观察“小水滴”一圈圈扩散，理解为什么广度优先搜索总能先找到最短路。",
+    description: "从入口走到出口，尽量少走弯路。先自己试试，看看能不能找到最短路线。",
     author: "算法教练",
     gameType: "path_connect",
     algorithm: "广度优先搜索 BFS",
@@ -25,7 +25,7 @@ export const demoGames: Game[] = [
     lesson: "孩子先尝试自己走迷宫，再看 BFS 动画复盘，比较“乱试”和“分层搜索”的差别。",
     skills: ["空间方向", "层级思考", "最短路径"],
     difficulty: "easy",
-    tags: ["迷宫", "图搜索", "入门"],
+    tags: ["迷宫", "最短路", "入门"],
     config: {
       boardSize: 5,
       goal: "从 1 号入口走到 9 号出口，用最少步数穿过迷宫。",
@@ -42,7 +42,7 @@ export const demoGames: Game[] = [
   {
     id: "tower-recursion",
     title: "汉诺塔搬家",
-    description: "帮三层小塔搬家，发现“大问题可以拆成小问题”，直观理解递归和分治。",
+    description: "帮三层小塔搬家，每次只能移动一个盘子，小盘子不能被大盘子压住。",
     author: "算法教练",
     gameType: "number_merge",
     algorithm: "递归与分治",
@@ -51,7 +51,7 @@ export const demoGames: Game[] = [
     lesson: "每一步都回答：我能不能把 3 层问题拆成 2 层问题？递归就是反复使用同一个方法。",
     skills: ["分解问题", "步骤规划", "递归直觉"],
     difficulty: "medium",
-    tags: ["递归", "分治", "经典"],
+    tags: ["搬盘子", "步骤规划", "经典"],
     config: {
       boardSize: 3,
       goal: "把 1、2、3 三个盘子从左边搬到右边，小盘子永远不能压在大盘子下面。",
@@ -67,7 +67,7 @@ export const demoGames: Game[] = [
   {
     id: "sudoku-backtracking",
     title: "数独侦探",
-    description: "像侦探一样排除不可能的数字，遇到分叉就做标记，理解回溯为什么能系统试错。",
+    description: "像侦探一样补数字：不乱猜，先排除不可能的选择，再一步步找到答案。",
     author: "算法教练",
     gameType: "path_connect",
     algorithm: "回溯 Backtracking",
@@ -76,7 +76,7 @@ export const demoGames: Game[] = [
     lesson: "孩子会看到每次填数都不是瞎猜，而是在“选择、检查、撤销、再选择”的循环里缩小答案。",
     skills: ["逻辑排除", "系统试错", "耐心验证"],
     difficulty: "hard",
-    tags: ["数独", "回溯", "逻辑"],
+    tags: ["数独", "侦探", "逻辑"],
     config: {
       boardSize: 5,
       goal: "给每行每列补上缺失数字，遇到冲突就撤回上一步重新选择。",
@@ -94,8 +94,8 @@ export const demoGames: Game[] = [
 
 export const starterDraft: DraftGame = {
   id: "starter-draft",
-  title: "我的迷宫算法实验",
-  description: "调整迷宫障碍和目标点，观察不同路线会怎样影响最短路。",
+  title: "我的迷宫关卡",
+  description: "调整迷宫障碍和目标点，看看别人能不能找到最短路线。",
   author: "当前学习者",
   gameType: "path_connect",
   algorithm: "广度优先搜索 BFS",

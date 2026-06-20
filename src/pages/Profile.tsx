@@ -17,16 +17,16 @@ export default function Profile() {
           <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan">Learning Record</p>
           <h1 className="mt-2 font-display text-6xl font-black">我的学习档案</h1>
           <div className="mt-8 grid gap-4 md:grid-cols-4">
-            <Metric icon={FlaskConical} label="算法实验" value={drafts.length} />
-            <Metric icon={BookMarked} label="已学课程" value={games.length} />
-            <Metric icon={Heart} label="收藏课程" value={favoriteGames.length} />
-            <Metric icon={Brain} label="掌握算法" value={new Set(games.map((game) => game.algorithm)).size} />
+            <Metric icon={FlaskConical} label="自制关卡" value={drafts.length} />
+            <Metric icon={BookMarked} label="玩过游戏" value={games.length} />
+            <Metric icon={Heart} label="收藏游戏" value={favoriteGames.length} />
+            <Metric icon={Brain} label="解锁方法" value={new Set(games.map((game) => game.algorithm)).size} />
           </div>
         </div>
 
         <div className="mt-8 grid gap-6 lg:grid-cols-2">
           <section className="rounded-[2rem] border border-cream/10 bg-cream/8 p-5">
-            <h2 className="font-display text-3xl font-black">算法实验</h2>
+            <h2 className="font-display text-3xl font-black">我的关卡</h2>
             <div className="mt-5 space-y-3">
               {drafts.map((draft) => (
                 <Link key={draft.id} to={`/create/${draft.id}`} className="block rounded-3xl border border-cream/10 bg-ink/35 p-4 transition hover:border-cyan/45">
@@ -43,7 +43,7 @@ export default function Profile() {
           </section>
 
           <section className="rounded-[2rem] border border-cream/10 bg-cream/8 p-5">
-            <h2 className="font-display text-3xl font-black">收藏课程</h2>
+            <h2 className="font-display text-3xl font-black">收藏游戏</h2>
             <div className="mt-5 space-y-3">
               {favoriteGames.map((game) => (
                 <Link key={game.id} to={`/games/${game.id}`} className="block rounded-3xl border border-cream/10 bg-ink/35 p-4 transition hover:border-cyan/45">

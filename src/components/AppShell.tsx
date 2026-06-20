@@ -7,8 +7,8 @@ type AppShellProps = {
 }
 
 const navItems = [
-  { href: "/", label: "算法课", icon: LibraryBig },
-  { href: "/create", label: "实验室", icon: FlaskConical },
+  { href: "/", label: "游戏库", icon: LibraryBig },
+  { href: "/create", label: "造关卡", icon: FlaskConical },
   { href: "/me", label: "学习档案", icon: GraduationCap },
 ]
 
@@ -26,7 +26,7 @@ export default function AppShell({ children }: AppShellProps) {
             </span>
             <span>
               <span className="block font-display text-xl font-black tracking-tight">脑力小工坊</span>
-              <span className="block text-xs text-cream/58">小学生算法启蒙乐园</span>
+              <span className="block text-xs text-cream/58">先玩游戏，再懂算法</span>
             </span>
           </NavLink>
 

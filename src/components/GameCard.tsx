@@ -23,14 +23,14 @@ export default function GameCard({ game, liked, onFavorite, onRemix }: GameCardP
 
       <div className="mt-5 space-y-4">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan">{game.algorithm}</p>
+          <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan">{game.ageRange} · {difficultyLabels[game.difficulty]}</p>
           <h3 className="mt-2 font-display text-2xl font-black leading-tight text-cream">{game.title}</h3>
           <p className="mt-2 line-clamp-2 text-sm text-cream/62">{game.description}</p>
         </div>
 
         <div className="rounded-2xl border border-cyan/15 bg-cyan/8 p-3">
-          <p className="text-xs font-black text-cyan">学到的算法思想</p>
-          <p className="mt-1 line-clamp-2 text-sm text-cream/70">{game.concept}</p>
+          <p className="text-xs font-black text-cyan">玩完解锁</p>
+          <p className="mt-1 line-clamp-2 text-sm text-cream/70">这关的最佳解法，和它背后的聪明方法。</p>
         </div>
 
         <div className="flex flex-wrap gap-2">
@@ -46,15 +46,15 @@ export default function GameCard({ game, liked, onFavorite, onRemix }: GameCardP
             <UsersRound className="h-3.5 w-3.5" />
             {game.playCount.toLocaleString()} 次游玩
           </span>
-          <span>{game.ageRange}</span>
+          <span>最佳解法：待解锁</span>
         </div>
 
         <div className="grid grid-cols-[1fr_auto_auto] gap-2">
           <Link to={`/play/${game.id}`} className="toy-button justify-center px-4 py-3 text-sm">
             <Play className="h-4 w-4" />
-            开始挑战
+            开始玩
           </Link>
-          <button className="icon-button" onClick={() => onRemix(game.id)} aria-label="进入算法实验">
+          <button className="icon-button" onClick={() => onRemix(game.id)} aria-label="改造关卡">
             <FlaskConical className="h-4 w-4" />
           </button>
           <button className="icon-button" onClick={() => onFavorite(game.id)} aria-label="收藏游戏">

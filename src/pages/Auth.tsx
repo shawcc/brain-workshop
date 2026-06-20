@@ -10,12 +10,12 @@ export default function Auth() {
             <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan">Supabase Ready</p>
             <h1 className="mt-3 font-display text-6xl font-black leading-none">家长与老师入口</h1>
             <p className="mt-5 max-w-xl text-cream/66">
-              当前版本先演示前端学习闭环。接入 Supabase 后，这里会承载班级、学习进度、收藏课程和算法实验云同步。
+              当前版本先演示前端学习闭环。接入 Supabase 后，这里会承载班级、学习进度、收藏游戏和自制关卡云同步。
             </p>
             <div className="mt-8 grid gap-3">
               <button className="toy-button justify-center px-5 py-4">
                 <Github className="h-5 w-5" />
-                使用 GitHub 管理课程
+                使用 GitHub 管理内容
               </button>
               <button className="toy-button justify-center bg-cream text-ink px-5 py-4">
                 <Mail className="h-5 w-5" />
