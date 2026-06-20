@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Avenir Next", ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #f7f0dc;
+  background: #0b1020;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(0.6);
+  opacity: 0.58;
+}
+
+@layer components {
+  .toy-button {
+    @apply inline-flex items-center gap-2 rounded-2xl border border-black/20 bg-orange font-black text-ink shadow-toy transition duration-200 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-1 active:shadow-none;
+  }
+
+  .icon-button {
+    @apply inline-grid h-12 w-12 place-items-center rounded-2xl border border-cream/10 bg-cream/10 text-cream transition duration-200 hover:-translate-y-0.5 hover:border-cyan/50 hover:bg-cyan hover:text-ink;
+  }
+
+  .input {
+    @apply w-full rounded-2xl border border-cream/10 bg-ink/55 px-4 py-3 text-cream outline-none transition placeholder:text-cream/30 focus:border-cyan/70 focus:ring-4 focus:ring-cyan/10;
+  }
+}
